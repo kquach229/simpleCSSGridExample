@@ -1,0 +1,85 @@
+
+.container {
+    /* Set display to grid to use grid */
+    display: grid;
+    height: 100vh;
+    /* Sets the horizontal space in each column. Each value represents a new column */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* Sets the vertical space of each row. Each value represents a new row */
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+    /* Sets the layout of the grids based on the name of grid area, which is defined in each item */
+    grid-template-areas: 
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar content1 content2 content3"
+    "sidebar footer footer footer";
+    /* Sets the gap between each gtid item */
+    grid-gap:.2rem;
+    /* Sets the text to align to the center */
+    text-align: center;
+    /* Sets the fontweight to bold */
+    font-weight: bold;
+}
+
+nav {
+    background-color: #a7ffeb;
+    /* Sets the grid area for this item to nav, which works hand in hand with grid template areas */
+    grid-area: nav;
+}
+
+main {
+    background-color: #84ffff;
+     /* Sets the grid area for this item to main, which works hand in hand with grid template areas */
+    grid-area: main;
+}
+
+#sidebar {
+    background-color: #18ffff;
+     /* Sets the grid area for this item to sidebar, which works hand in hand with grid template areas */
+    grid-area: sidebar;
+}
+
+.content1 {
+    background-color: #6fffd2;
+     /* Sets the grid area for this item to content1, which works hand in hand with grid template areas */
+    grid-area: content1;
+}
+
+.content2 {
+    background-color: #64ffda;
+     /* Sets the grid area for this item to content2, which works hand in hand with grid template areas */
+    grid-area: content2;
+}
+
+
+.content3 {
+    background-color: #1de9b6;
+     /* Sets the grid area for this item to content3, which works hand in hand with grid template areas */
+    grid-area: content3;
+}
+
+
+footer {
+    background-color: lightblue;
+     /* Sets the grid area for this item to footer, which works hand in hand with grid template areas */
+    grid-area: footer;
+}
+
+/* Media query for screens smaller than 550px */
+@media only screen and (max-width:550px) {
+    .container {
+        /* Sets the columns to only 1, which means one item each line */
+        grid-template-columns: 1fr;
+        /* Sets the vertical space of each row, there will be 7 rows because of 7 values */
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        /* Sets the layout for each item */
+        grid-template-areas: 
+            "nav"
+            "sidebar"
+            "main"
+            "content1"
+            "content2"
+            "content3"
+            "footer";
+    }
+}
